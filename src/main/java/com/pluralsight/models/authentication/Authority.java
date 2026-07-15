@@ -1,4 +1,4 @@
-package com.pluralsight.model.authentication;
+package com.pluralsight.models.authentication;
 
 import java.util.Objects;
 

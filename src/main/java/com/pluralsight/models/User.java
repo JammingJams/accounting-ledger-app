@@ -1,7 +1,7 @@
-package com.pluralsight.model;
+package com.pluralsight.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.pluralsight.model.authentication.Authority;
+import com.pluralsight.models.authentication.Authority;
 import jakarta.persistence.*;
 
 import java.util.HashSet;
