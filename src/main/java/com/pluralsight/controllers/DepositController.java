@@ -42,10 +42,31 @@ public class DepositController {
     }
 
     @PostMapping()
-    public ResponseEntity<Deposit> addDeposit(@RequestBody Deposit deposit)
+    public ResponseEntity<Deposit> addDeposit(@RequestBody Deposit deposit, Principal principal)
     {
+        String userName = principal.getName();
+        User user = userService.getUserName(userName);
+        Long userId = user.getId();
+
+        if (userId == null) {
+            return ResponseEntity.notFound().build();
+        }
+
+        deposit.setUserId(userId);
         Deposit saved = depositService.create(deposit);
         return ResponseEntity.status(HttpStatus.CREATED).body(saved);
     }
 
+    @DeleteMapping("{deposit_id}")
+    public ResponseEntity<Void> deleteDepositByUserId(@PathVariable Long depositId, Principal principal)
+    {
+        String userName = principal.getName();
+        User user = userService.getUserName(userName);
+        Long userId = user.getId();
+
+        if (depositService.deleteByUserId(userId, depositId)) {
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.notFound().build();
+    }
 }
