@@ -7,36 +7,36 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 
 @Entity
-@Table(name = "payments")
-public class Payment {
+@Table(name = "deposits")
+public class Deposit {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "payment_id")
+    @Column(name = "deposit_id")
     private Long paymentId;
 
     @Column(name = "user_id")
     private Long userId;
 
-    @Column(name = "payment_name")
+    @Column(name = "deposit_name")
     private String paymentName;
 
     @Column(name = "vendor_name")
     private String vendorName;
 
-    @Column(name = "payment_date")
+    @Column(name = "deposit_date")
     private LocalDate paymentDate;
 
-    @Column(name = "payment_time")
+    @Column(name = "deposit_time")
     private LocalTime paymentTime;
 
-    @Column(name = "payment_amount")
+    @Column(name = "deposit_amount")
     private BigDecimal paymentAmount;
 
-    public Payment() {
+    public Deposit() {
     }
 
-    public Payment(Long paymentId, Long userId,
+    public Deposit(Long paymentId, Long userId,
                    String paymentName, String vendorName,
                    LocalDate paymentDate, LocalTime paymentTime,
                    BigDecimal paymentAmount) {
