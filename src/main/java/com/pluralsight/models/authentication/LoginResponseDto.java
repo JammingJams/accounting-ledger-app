@@ -9,7 +9,7 @@ public class LoginResponseDto {
     private User user;
 
     public LoginResponseDto(String token, User user) {
-        this.token =token;
+        this.token = token;
         this.user = user;
     }
 

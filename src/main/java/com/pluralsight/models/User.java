@@ -51,11 +51,12 @@ public class User {
         this.activated = true;
     }
 
-    public User(Long id, String username, String password, String authorities) {
+    public User(String username, String password, String authorities) {
         this.id = id;
         this.username = username;
         if(authorities != null) this.setAuthorities(authorities);
         this.password = password;
+        this.activated = true;
     }
 
     public Long getId() {

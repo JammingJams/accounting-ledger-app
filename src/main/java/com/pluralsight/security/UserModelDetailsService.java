@@ -8,13 +8,15 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Component("userDetailsService")
 public class UserModelDetailsService implements UserDetailsService {
 
-    private final Logger LOG = LoggerFactory.getLogger(UserModelDetailsService.class);
+    private final Logger log = LoggerFactory.getLogger(UserModelDetailsService.class);
 
     private final UserService userService;
 
@@ -24,7 +26,7 @@ public class UserModelDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(final String login) {
-        LOG.debug("Authentication user '{}'", login);
+        log.debug("Authentication user '{}'", login);
         String lowercaseLogin = login.toLowerCase();
         return createSpringSecurityUser(lowercaseLogin, userService.getUserName(lowercaseLogin));
     }

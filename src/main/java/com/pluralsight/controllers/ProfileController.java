@@ -5,6 +5,7 @@ import com.pluralsight.models.User;
 import com.pluralsight.service.ProfileService;
 import com.pluralsight.service.UserService;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
@@ -12,6 +13,7 @@ import java.security.Principal;
 @RestController
 @RequestMapping("/profile")
 @CrossOrigin
+@PreAuthorize("isAuthenticated()")
 public class ProfileController {
 
     private final ProfileService profileService;

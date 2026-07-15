@@ -57,7 +57,7 @@ public class DepositController {
         return ResponseEntity.status(HttpStatus.CREATED).body(saved);
     }
 
-    @DeleteMapping("{deposit_id}")
+    @DeleteMapping("{depositId}")
     public ResponseEntity<Void> deleteDepositByUserId(@PathVariable Long depositId, Principal principal)
     {
         String userName = principal.getName();

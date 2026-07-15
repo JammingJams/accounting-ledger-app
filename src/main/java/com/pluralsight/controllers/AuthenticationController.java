@@ -74,7 +74,7 @@ public class AuthenticationController {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
         }
 
-        User user = userService.create(new User(0L, registerUserDto.getUsername(),
+        User user = userService.create(new User(registerUserDto.getUsername(),
                 registerUserDto.getPassword(), registerUserDto.getRole()));
 
         Profile profile = new Profile();
