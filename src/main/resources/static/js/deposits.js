@@ -1,6 +1,4 @@
 async function getDeposits() {
-    alert("Get Deposits function called");
-
     const token = localStorage.getItem("jwt");
 
     const response = await fetch("http://localhost:8080/deposits", {

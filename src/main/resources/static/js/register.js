@@ -1,6 +1,4 @@
 async function register() {
-    alert("Register function called");
-
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
     const confirmPassword = document.getElementById("confirmPassword").value;

@@ -1,6 +1,4 @@
 async function getPayments() {
-    alert("Get Payments function called");
-
     const token = localStorage.getItem("jwt");
 
     const response = await fetch("http://localhost:8080/payments", {

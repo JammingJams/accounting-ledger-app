@@ -1,6 +1,4 @@
 async function login() {
-    alert("Login function called");
-
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
 
