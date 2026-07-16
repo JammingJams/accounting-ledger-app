@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="dashboard page">
+
+        <div class="dashboard-header">
+
+            <h1>Accounting Ledger</h1>
+
+            <button class="logout-btn"
+                    onclick="logout()">
+                Logout
+            </button>
+
+        </div>
+
+        <div class="filter-container">
+
+            <h2>Filters</h2>
+
+            <div class="filter-row">
+
+                <input id="minAmount"
+                    type="number"
+                    step="0.01"
+                    placeholder="Min Amount">
+
+                <input id="maxAmount"
+                    type="number"
+                    step="0.01"
+                    placeholder="Max Amount">
+
+                <input id="startDate"
+                    type="date">
+
+                <input id="endDate"
+                    type="date">
+
+                <input id="vendorFilter"
+                    placeholder="Vendor">
+
+                <input id="transactionName"
+                    placeholder="Transaction Name">
+
+                <select id="transactionType">
+                    <option value="all">All</option>
+                    <option value="deposits">Deposits</option>
+                    <option value="payments">Payments</option>
+                </select>
+
+                <button onclick="applyFilters()">
+                    Search
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="ledger-container">
+
+            <div class="ledger-card">
+
+                <div class="section-header">
+
+                    <h2>Deposits</h2>
+
+                    <button onclick="showDepositForm()">
+                        + Add Deposit
+                    </button>
+
+                </div>
+
+                <div id="deposits"></div>
+
+            </div>
+
+            <div class="ledger-card">
+
+                <div class="section-header">
+
+                    <h2>Payments</h2>
+
+                    <button onclick="showPaymentForm()">
+                        + Add Payment
+                    </button>
+
+                </div>
+
+                <div id="payments"></div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            loadDashboard();
+        });
+    </script>
+
+    <script src="js/auth.js"></script>
+    <script src="js/deposits.js"></script>
+    <script src="js/payments.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
