@@ -76,6 +76,28 @@
 
                 </div>
 
+                <div id="depositForm" style="display:none;">
+
+                    <input id="depositName" placeholder="Deposit Name">
+
+                    <input id="vendorName" placeholder="Vendor Name">
+
+                    <input id="depositDate" type="date">
+
+                    <input id="depositTime" type="time">
+
+                    <input
+                        id="depositAmount"
+                        type="number"
+                        step="0.01"
+                        placeholder="Amount">
+
+                    <button onclick="postDeposit()">
+                        Submit Deposit
+                    </button>
+
+                </div>
+
                 <div id="deposits"></div>
 
             </div>
@@ -86,8 +108,38 @@
 
                     <h2>Payments</h2>
 
-                    <button onclick="showPaymentForm()">
+                    <button onclick="togglePaymentForm()">
                         + Add Payment
+                    </button>
+
+                </div>
+
+                <div id="paymentForm" style="display:none;">
+
+                    <input
+                            id="paymentName"
+                            placeholder="Payment Name">
+
+                    <input
+                            id="vendorPaymentName"
+                            placeholder="Vendor Name">
+
+                    <input
+                            id="paymentDate"
+                            type="date">
+
+                    <input
+                            id="paymentTime"
+                            type="time">
+
+                    <input
+                            id="paymentAmount"
+                            type="number"
+                            step="0.01"
+                            placeholder="Amount">
+
+                    <button onclick="postPayment()">
+                        Submit Payment
                     </button>
 
                 </div>
